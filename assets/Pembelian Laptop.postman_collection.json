@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "0fb8a8df-d624-46e0-ac42-8df4682237bc",
+		"name": "Pembelian Laptop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31021103",
+		"_collection_link": "https://www.postman.com/docking-module-administrator-17671676/workspace/romli23/collection/31021103-0fb8a8df-d624-46e0-ac42-8df4682237bc?action=share&source=collection_link&creator=31021103"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ujicoba@gmaill.com\",\r\n    \"password\" : \"ujicoba\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"ujicoba@gmaill.com\",\r\n    \"password\" : \"ujicoba\"\r\n    \r\n\r\n    }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TambahLaptop",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJyb21saTA3NkBnbWFpbC5jb20iLCJpYXQiOjE3MDA0MTY2MDN9.jQT3NsSPqrK3LlO90RQdXTdtwXKi-5gE9YWw9XtOPyE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product\" : \"Lenovo\",\r\n    \"description\" : \"Ram 4Gb Processor AMD Radeon 5\",\r\n    \"userId\" : \"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/laptop/?id=Asus Rog 5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"laptop",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "Asus Rog 5",
+							"description": "Ram 4Gb"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ViewProduct",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJyb21saTA3NkBnbWFpbC5jb20iLCJpYXQiOjE3MDA0MTY2MDN9.jQT3NsSPqrK3LlO90RQdXTdtwXKi-5gE9YWw9XtOPyE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/laptop/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"laptop",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addPayment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJyb21saTA3NkBnbWFpbC5jb20iLCJpYXQiOjE3MDA0MTY2MDN9.jQT3NsSPqrK3LlO90RQdXTdtwXKi-5gE9YWw9XtOPyE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": { 
+					"mode": "raw",
+					"raw": "{\r\n    \"product\" : \"Lenovo\",\r\n    \"description\" : \"Ram 4Gb Processor AMD Radeon 5\",\r\n    \"userId\" : \"2\"\r\n    \"laptopId\" : \"4\"\r\n   \"price\" : \"28000000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/payment/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"payment",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ViewPayment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/payment/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"payment",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
